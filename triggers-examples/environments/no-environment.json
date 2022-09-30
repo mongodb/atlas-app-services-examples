@@ -1,0 +1,17 @@
+{
+  "values": {
+    "ATLAS_PUBLIC_KEY": "soaytmok",
+    "AWS_S3_ACCESS_KEY_ID": "AKIAZ6OLG2JWZRUEWQHR",
+    "AWS_S3_BUCKET_NAME": "app-services-integration-testing",
+    "AWS_S3_BUCKET_REGION": "us-east-1",
+    "TWILIO_ACCOUNT_SID": "AC0e654bf1ec727b85ccebc0b83eb2001c",
+    "TWILIO_FROM_NUMBER": "+15005550006",
+    "APP_ID": "app_services_examples-plvox",
+    "CLUSTER_PROJECT_ID": "613fafb430fb992594569bcc",
+    "CLUSTER_NAME": "Cluster0",
+    "CLUSTER_PROVIDER": "AWS",
+    "CLUSTER_SCALE_UP_INSTANCE_SIZE": "M10",
+    "CLUSTER_SCALE_DOWN_INSTANCE_SIZE": "M20",
+    "ENABLE_PROD_JOB": false
+  }
+}

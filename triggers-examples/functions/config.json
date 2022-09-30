@@ -1,0 +1,46 @@
+[
+  {
+    "name": "sendOrderConfirmationText",
+    "private": true,
+    "run_as_system": true
+  },
+  {
+    "name": "materializeMonthlyProductSales",
+    "private": true,
+    "run_as_system": true
+  },
+  {
+    "name": "createCustomUserDataOnSignUp",
+    "private": true
+  },
+  {
+    "name": "passwordResetFunc",
+    "private": false
+  },
+  {
+    "name": "generateMonthlySalesReport",
+    "private": false,
+    "can_evaluate": {
+      "%%user.type": "server"
+    }
+  },
+  {
+    "name": "scaleCluster",
+    "private": false,
+    "can_evaluate": {
+      "%%user.type": "server"
+    }
+  },
+  {
+    "name": "getClusterScalingInfo",
+    "private": true
+  },
+  {
+    "name": "scaleDownCluster",
+    "private": true
+  },
+  {
+    "name": "scaleUpCluster",
+    "private": true
+  }
+]

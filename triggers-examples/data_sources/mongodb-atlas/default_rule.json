@@ -1,0 +1,15 @@
+{
+  "roles": [
+    {
+      "name": "apiKeyReadWriteAll",
+      "apply_when": {
+        "%%user.type": "server"
+      },
+      "read": true,
+      "write": true,
+      "insert": true,
+      "delete": true,
+      "search": true
+    }
+  ]
+}

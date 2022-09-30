@@ -1,0 +1,16 @@
+{
+  "name": "scaleDownClusterDuringDay",
+  "type": "SCHEDULED",
+  "config": {
+    "schedule": "0 20 * * 1-5",
+    "skip_catchup_events": false
+  },
+  "disabled": true,
+  "event_processors": {
+    "FUNCTION": {
+      "config": {
+        "function_name": "scaleDownCluster"
+      }
+    }
+  }
+}

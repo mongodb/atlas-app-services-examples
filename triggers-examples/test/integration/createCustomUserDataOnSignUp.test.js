@@ -28,7 +28,7 @@ afterAll(async () => {
 });
 test("Creates custom user data on email/password sign up", async () => {
   // Give time for Trigger to execute
-  sleep(1000);
+  await sleep(1000);
   const userData = client.db("store").collection("userData");
   const customUserData = await userData.findOne({ _id: user.id });
   expect(customUserData._id).toBe(user.id);

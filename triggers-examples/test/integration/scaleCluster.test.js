@@ -4,6 +4,9 @@ const app = getRealmApp();
 beforeAll(async () => {
   await app.logIn(Credentials.serverApiKey(process.env.LOCAL_TEST_KEY));
 });
+afterAll(async () => {
+  await app.currentUser.logOut();
+});
 
 // Note: this test is skipped by default since it requires performing some
 // heavy database operations that you probably do not want to run every time

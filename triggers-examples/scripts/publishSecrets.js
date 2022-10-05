@@ -30,6 +30,19 @@ async function createSecret(
   return res;
 }
 
+async function deleteSecret(groupId, appId, accessToken, secretId) {
+  const endpoint = `https://realm.mongodb.com/api/admin/v3.0/groups/${groupId}/apps/${appId}/secrets/${secretId}`;
+  const { status } = await axios.delete(endpoint, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+  if (status !== 204) {
+    throw new Error("Could not delete secret: " + secretId);
+  }
+  console.log("Deleted secret: " + secretId);
+}
+
 async function updateSecret(
   groupId,
   appId,
@@ -49,8 +62,6 @@ async function updateSecret(
   return res;
 }
 
-// TODO: add logic to delete secrets that are no longer in the .env file
-
 async function run() {
   const {
     PUBLIC_API_KEY,
@@ -64,9 +75,17 @@ async function run() {
     ADMIN_API_APP_ID,
     access_token
   );
+
   const secretNames = Object.keys(process.env).filter((key) =>
     key.startsWith("APP_SECRET_")
   );
+
+  const oldSecrets = currentSecrets.filter(({ name }) => {
+    if (secretNames.includes(name)) {
+      return false;
+    }
+    return true;
+  });
 
   const secretsPromises = secretNames.map((secretName) => {
     const found = currentSecrets.find(({ name, _id }) => {
@@ -93,6 +112,15 @@ async function run() {
     );
   });
   await Promise.all(secretsPromises);
+  const oldSecretDeletionPromises = oldSecrets.map((oldSecret) =>
+    deleteSecret(
+      ADMIN_API_GROUP_ID,
+      ADMIN_API_APP_ID,
+      access_token,
+      oldSecret._id
+    )
+  );
+  await Promise.all(oldSecretDeletionPromises);
 }
 
 module.exports = run();

@@ -9,12 +9,6 @@ async function scaleCluster(
   clusterProvider,
   scaleInstanceSize
 ) {
-  // const axios = require("axios");
-  // const url = `https://cloud.mongodb.com/api/atlas/v1.0/groups/${projectId}/clusters/${clusterName}`;
-  // const auth = {
-  //   username,
-  //   password,
-  // };
   const headers = {
     "Content-Type": ["application/json"],
     "Accept-Encoding": ["bzip, deflate"],
@@ -28,7 +22,6 @@ async function scaleCluster(
     },
   };
 
-  // const { data } = await axios.patch(url, body, { auth, headers });
   const arg = {
     scheme: "https",
     host: "cloud.mongodb.com",

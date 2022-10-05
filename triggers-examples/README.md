@@ -12,7 +12,7 @@ This repository contains the following example [Atlas Triggers](https://www.mong
 | [`materializeMonthlyProductSales`](#materializemonthlyproductsales)                                                         | Database       | Update a materialized view document when a document is added to a collection.                                                                                                       |
 | [`createCustomUserDataOnSignUp`](#createcustomuserdataonsignup)                                                             | Authentication | Create a [Custom User Data](https://www.mongodb.com/docs/atlas/app-services/users/enable-custom-user-data/) Object when a user creates an account with App Services Authentication. |
 | [`generatePreviousMonthSalesReport`](#generatepreviousmonthsalesreport)                                                     | Scheduled      | Post a CSV report of previous month's sales totals to an AWS S3 bucket.                                                                                                             |
-| [`scaleDownClusterDuringNight` and `scaleUpClusterDuringDay`](#scaledownclusterduringnight-and-scaleupclusterduringday) and | Scheduled      | Post a CSV report of previous month's sales totals to an AWS S3 bucket.                                                                                                             |
+| [`scaleDownClusterDuringNight` and `scaleUpClusterDuringDay`](#scaledownclusterduringnight-and-scaleupclusterduringday) and | Scheduled      | Scale an Atlas cluster up and down based on time of day.                                                                                                                            |
 
 ### sendOrderConfirmationText
 

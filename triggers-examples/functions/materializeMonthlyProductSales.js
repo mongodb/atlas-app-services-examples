@@ -23,7 +23,7 @@ async function materializeMonthlyProductSales({ fullDocument }) {
     .get("mongodb-atlas")
     .db("store")
     .collection("monthlyProductSales");
-  // Add data to MongoDB
+  // Update data in MongoDB using updateOne
   await monthlyProductSales.updateOne(query, update, options);
 }
 exports = materializeMonthlyProductSales;

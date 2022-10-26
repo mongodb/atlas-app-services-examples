@@ -11,6 +11,7 @@ const password = faker.internet.password();
 beforeEach(async () => {
   await app.emailPasswordAuth.registerUser({ email, password });
   user = await app.logIn(Realm.Credentials.emailPassword(email, password));
+  await user.logOut();
 });
 afterEach(async () => {
   const userId = user.id;
@@ -26,16 +27,12 @@ beforeAll(async () => {
 afterAll(async () => {
   await client.close();
 });
-test("Creates custom user data on email/password sign up", async () => {
+test("Updates custom user data on email/password log in", async () => {
+  await app.logIn(Realm.Credentials.emailPassword(email, password));
   // Give time for Trigger to execute
   await sleep(1000);
   const userData = client.db("store").collection("userData");
   const customUserData = await userData.findOne({ _id: user.id });
   expect(customUserData._id).toBe(user.id);
-  expect(
-    customUserData.identities.find(
-      ({ provider_type }) => provider_type === "local-userpass"
-    )
-  ).toBeTruthy();
-  expect(customUserData.accountCreationTime.getTime() < Date.now()).toBe(true);
+  expect(customUserData.lastLogIn.getTime() < Date.now()).toBe(true);
 });

@@ -34,7 +34,7 @@ const april2022ReportParams = {
 
 let client;
 beforeAll(async () => {
-  await app.logIn(Realm.Credentials.serverApiKey(process.env.LOCAL_TEST_KEY));
+  await app.logIn(Realm.Credentials.apiKey(process.env.LOCAL_TEST_KEY));
   client = connectToMongoDbClient();
 });
 

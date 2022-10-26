@@ -3,5 +3,5 @@
   "app_id": "app_services_examples-gvlds",
   "name": "app_services_examples",
   "location": "US-VA",
-  "deployment_model": "LOCAL"
+  "deployment_model": "GLOBAL"
 }

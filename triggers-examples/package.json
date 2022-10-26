@@ -24,6 +24,6 @@
     "mongodb": "^4.10.0",
     "mongodb-realm-cli": "^2.6.0",
     "nodemon": "^2.0.20",
-    "realm": "^10.21.1"
+    "realm": "^11.0.0"
   }
 }

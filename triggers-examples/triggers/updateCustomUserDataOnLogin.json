@@ -1,15 +1,15 @@
 {
-  "name": "createCustomUserDataOnSignUp",
+  "name": "updateCustomUserDataOnLogin",
   "type": "AUTHENTICATION",
   "config": {
-    "operation_type": "CREATE",
+    "operation_type": "LOGIN",
     "providers": ["local-userpass"]
   },
   "disabled": false,
   "event_processors": {
     "FUNCTION": {
       "config": {
-        "function_name": "createCustomUserDataOnSignUp"
+        "function_name": "updateCustomUserDataOnLogin"
       }
     }
   }

@@ -1,0 +1,16 @@
+{
+  "name": "updateCustomUserDataOnLogin",
+  "type": "AUTHENTICATION",
+  "config": {
+    "operation_type": "LOGIN",
+    "providers": ["local-userpass"]
+  },
+  "disabled": false,
+  "event_processors": {
+    "FUNCTION": {
+      "config": {
+        "function_name": "updateCustomUserDataOnLogin"
+      }
+    }
+  }
+}

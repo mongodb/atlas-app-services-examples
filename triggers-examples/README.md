@@ -6,13 +6,13 @@ This repository contains example use cases for [MongoDB Atlas App Services](http
 
 This repository contains the following example [Atlas Triggers](https://www.mongodb.com/docs/atlas/app-services/triggers/overview/).
 
-| Name                                                                                                                        | Trigger Type   | Description                                                                                                                                                                         |
-| :-------------------------------------------------------------------------------------------------------------------------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`sendOrderConfirmationText`](#sendorderconfirmationtext)                                                                   | Database       | Sends an SMS message with the Twilio SMS API when a document is added to a collection.                                                                                              |
-| [`materializeMonthlyProductSales`](#materializemonthlyproductsales)                                                         | Database       | Update a materialized view document when a document is added to a collection.                                                                                                       |
-| [`createCustomUserDataOnSignUp`](#createcustomuserdataonsignup)                                                             | Authentication | Create a [Custom User Data](https://www.mongodb.com/docs/atlas/app-services/users/enable-custom-user-data/) Object when a user creates an account with App Services Authentication. |
-| [`generatePreviousMonthSalesReport`](#generatepreviousmonthsalesreport)                                                     | Scheduled      | Post a CSV report of previous month's sales totals to an AWS S3 bucket.                                                                                                             |
-| [`scaleDownClusterDuringNight` and `scaleUpClusterDuringDay`](#scaledownclusterduringnight-and-scaleupclusterduringday) and | Scheduled      | Scale an Atlas cluster up and down based on time of day.                                                                                                                            |
+| Name                                                                                                                        | Trigger Type   | Description                                                                                                                                                                            |
+| :-------------------------------------------------------------------------------------------------------------------------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`sendOrderConfirmationText`](#sendorderconfirmationtext)                                                                   | Database       | Sends an SMS message with the Twilio SMS API when a document is added to a collection.                                                                                                 |
+| [`materializeMonthlyProductSales`](#materializemonthlyproductsales)                                                         | Database       | Update a materialized view document when a document is added to a collection.                                                                                                          |
+| [`updateCustomUserDataOnLogin`](#updateCustomUserDataOnLogin)                                                               | Authentication | Upsert a [Custom User Data](https://www.mongodb.com/docs/atlas/app-services/users/enable-custom-user-data/) Object when a user signs into an account with App Services Authentication. |
+| [`generatePreviousMonthSalesReport`](#generatepreviousmonthsalesreport)                                                     | Scheduled      | Post a CSV report of previous month's sales totals to an AWS S3 bucket.                                                                                                                |
+| [`scaleDownClusterDuringNight` and `scaleUpClusterDuringDay`](#scaledownclusterduringnight-and-scaleupclusterduringday) and | Scheduled      | Scale an Atlas cluster up and down based on time of day.                                                                                                                               |
 
 ### sendOrderConfirmationText
 
@@ -40,10 +40,10 @@ Relevant files:
   Function invoked by Trigger
 - [`functions/config.json`](./functions/config.json): Function configuration
 
-### createCustomUserDataOnSignUp
+### updateCustomUserDataOnLogin
 
-Authentication Trigger that creates a [Custom User Data](https://www.mongodb.com/docs/atlas/app-services/users/enable-custom-user-data/)
-object when a user creates an account with App Services Authentication.
+Authentication Trigger that upserts (create or update) a [Custom User Data](https://www.mongodb.com/docs/atlas/app-services/users/enable-custom-user-data/)
+object when a user logs in with App Services Authentication.
 
 Relevant files:
 

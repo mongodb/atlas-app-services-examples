@@ -82,9 +82,9 @@ Relevant files:
   Helper Function that gets cluster scaling configuration information
 - [`functions/scaleCluster.js`](./functions/scaleCluster.js):
   Helper Function that calls the Atlas Admin API to scale cluster
-- [`functions/scaleDownClusterDuringNight.js`](./functions/scaleDownClusterDuringNight.js):
+- [`functions/scaleDownClusterDuringNight.js`](./functions/scaleDownCluster.js):
   Function called by Scheduled Trigger that handles scaling down of cluster
-- [`functions/scaleUpClusterDuringDay.js`](./functions/scaleUpClusterDuringDay.js):
+- [`functions/scaleUpClusterDuringDay.js`](./functions/scaleUpCluster.js):
   Function called by Scheduled Trigger that handles scaling up of cluster
 - [`functions/config.json`](./functions/config.json): Configuration for all
   relevant Functions

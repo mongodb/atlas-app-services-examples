@@ -5,3 +5,6 @@ that help you build apps, integrate services, and connect to your Atlas data fas
 
 Currently the Atlas App Services examples just contains examples of [Atlas Triggers](https://www.mongodb.com/docs/atlas/app-services/triggers/),
 which you can find in the [triggers-examples folder](./triggers-examples).
+
+For a wide range of example projects showing common development patterns and use cases, 
+see the `Atlas Device SDK Example Projects page <https://www.mongodb.com/docs/realm/example-projects/>`.

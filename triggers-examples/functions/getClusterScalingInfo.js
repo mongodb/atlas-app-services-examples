@@ -10,7 +10,7 @@ function getClusterScalingInfo() {
   const scaleUpInstanceSize =
     context.environment.values["CLUSTER_SCALE_UP_INSTANCE_SIZE"];
   const scaleDownInstanceSize =
-    context.environment.values["CLUSTER_SCALE_UP_INSTANCE_SIZE"];
+    context.environment.values["CLUSTER_SCALE_DOWN_INSTANCE_SIZE"];
   return {
     username,
     password,
